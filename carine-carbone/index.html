@@ -1,0 +1,606 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Carine Carbone, esteticista. Tratamentos faciais e corporais com atendimento personalizado. Agende pelo WhatsApp.">
+<meta property="og:title" content="Carine Carbone Estética">
+<meta property="og:description" content="Tratamentos faciais e corporais com atendimento personalizado. Agende pelo WhatsApp.">
+<meta property="og:type" content="website">
+<title>Carine Carbone Estética</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap">
+<style>
+/* Layout: página única de luxo, seções alternando creme, verde claro e verde profundo; molduras em arco; foto dela no arco do topo. */
+:root {
+  --bg: #F6F0E4;
+  --bg-alt: #DCE6D8;
+  --bg-deep: #2F4A3A;
+  --card: #FBF7EE;
+  --fg: #22302A;
+  --fg-muted: #4F5F55;
+  --on-deep: #F6F0E4;
+  --on-deep-muted: #C9D5C6;
+  --accent: #5E7C61;
+  --sage: #8FA68E;
+  --sand: #E9DFCB;
+  --line: #C4CDBB;
+  --line-deep: #587463;
+  --btn-bg: #2F4A3A;
+  --btn-fg: #F6F0E4;
+  --btn-hover: #8FA68E;
+  --btn-hover-fg: #1C2A22;
+  --btn2-bg: #F6F0E4;
+  --btn2-fg: #2F4A3A;
+  --ill-a: #E9DFCB;
+  --ill-b: #BFD0BB;
+  --ill-line: #2F4A3A;
+  --display: "Cormorant Garamond", "Iowan Old Style", Georgia, serif;
+  --body: "Jost", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #131E18;
+    --bg-alt: #1A2920;
+    --bg-deep: #0D1511;
+    --card: #1F3025;
+    --fg: #EFE8D8;
+    --fg-muted: #B4C0B3;
+    --on-deep: #EFE8D8;
+    --on-deep-muted: #A9B8A8;
+    --accent: #9DB89B;
+    --line: #34493C;
+    --line-deep: #34493C;
+    --btn-bg: #8FA68E;
+    --btn-fg: #0D1511;
+    --btn-hover: #EFE8D8;
+    --btn-hover-fg: #0D1511;
+    --btn2-bg: #EFE8D8;
+    --btn2-fg: #0D1511;
+    --ill-a: #26382C;
+    --ill-b: #355240;
+    --ill-line: #C3D3BF;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #131E18;
+  --bg-alt: #1A2920;
+  --bg-deep: #0D1511;
+  --card: #1F3025;
+  --fg: #EFE8D8;
+  --fg-muted: #B4C0B3;
+  --on-deep: #EFE8D8;
+  --on-deep-muted: #A9B8A8;
+  --accent: #9DB89B;
+  --line: #34493C;
+  --line-deep: #34493C;
+  --btn-bg: #8FA68E;
+  --btn-fg: #0D1511;
+  --btn-hover: #EFE8D8;
+  --btn-hover-fg: #0D1511;
+  --btn2-bg: #EFE8D8;
+  --btn2-fg: #0D1511;
+  --ill-a: #26382C;
+  --ill-b: #355240;
+  --ill-line: #C3D3BF;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--body);
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+body::before {
+  content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px);
+  background: var(--bg); z-index: 60;
+}
+h1, h2, h3 { font-family: var(--display); font-weight: 400; line-height: 1.08; margin: 0; text-wrap: balance; }
+h1 { font-size: clamp(2.7rem, 7vw, 5rem); font-weight: 300; letter-spacing: -0.01em; }
+h2 { font-size: clamp(2rem, 4.6vw, 3.2rem); font-weight: 300; }
+h3 { font-size: 1.55rem; }
+em { font-style: italic; color: var(--accent); }
+.on-deep em { color: var(--sage); }
+p { margin: 0; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+.wrap {
+  max-width: 1160px; margin-inline: auto;
+  padding-left: max(20px, env(safe-area-inset-left, 0px));
+  padding-right: max(20px, env(safe-area-inset-right, 0px));
+}
+.band { padding-block: clamp(64px, 9vw, 120px); }
+.band.alt { background: var(--bg-alt); }
+.band.deep { background: var(--bg-deep); color: var(--on-deep); }
+.band.deep .muted { color: var(--on-deep-muted); }
+.muted { color: var(--fg-muted); }
+.eyebrow {
+  font-size: 0.74rem; letter-spacing: 0.26em; text-transform: uppercase; font-weight: 500;
+  color: var(--accent); display: block; margin-bottom: 18px;
+}
+.band.deep .eyebrow { color: var(--sage); }
+.head { max-width: 640px; margin-bottom: clamp(36px, 5vw, 64px); display: flex; flex-direction: column; gap: 16px; }
+.head.center { margin-inline: auto; text-align: center; align-items: center; }
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  padding: 16px 30px; border: 1px solid var(--btn-bg); background: var(--btn-bg); color: var(--btn-fg);
+  font-family: var(--body); font-size: 0.78rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase;
+  text-decoration: none; border-radius: 999px; transition: background .25s, color .25s, border-color .25s;
+  cursor: pointer;
+}
+.btn:hover { background: var(--btn-hover); border-color: var(--btn-hover); color: var(--btn-hover-fg); }
+.btn.ghost { background: transparent; color: var(--fg); border-color: var(--fg); }
+.btn.ghost:hover { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.band.deep .btn { background: var(--btn2-bg); color: var(--btn2-fg); border-color: var(--btn2-bg); }
+.band.deep .btn:hover { background: var(--sage); border-color: var(--sage); color: #14201A; }
+.btn.small { padding: 11px 20px; font-size: 0.7rem; }
+.link {
+  font-size: 0.74rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 500;
+  text-decoration: none; border-bottom: 1px solid var(--accent); padding-bottom: 3px; color: var(--accent);
+  align-self: flex-start;
+}
+.link:hover { color: var(--fg); border-color: var(--fg); }
+
+/* Header */
+.top {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50;
+  background: var(--bg); border-bottom: 1px solid var(--line);
+}
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 14px; }
+.brand { font-family: var(--display); font-size: 1.45rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; font-weight: 500; }
+.brand small { display: block; font-family: var(--body); font-size: 0.6rem; letter-spacing: 0.34em; color: var(--accent); font-weight: 400; margin-top: -2px; }
+.nav { display: flex; gap: 28px; font-size: 0.74rem; letter-spacing: 0.16em; text-transform: uppercase; }
+.nav a { text-decoration: none; color: var(--fg-muted); }
+.nav a:hover { color: var(--fg); }
+@media (max-width: 860px) { .nav { display: none; } }
+
+/* Illustrations */
+.ill {
+  position: relative; overflow: hidden; width: 100%;
+  background: linear-gradient(160deg, var(--ill-a), var(--ill-b));
+  display: grid; place-items: center;
+}
+.ill svg.art { width: 46%; max-width: 220px; height: auto; fill: none; stroke: var(--ill-line); stroke-width: 1.4; opacity: .75; }
+.ill::after {
+  content: "Imagem ilustrativa"; position: absolute; left: 12px; bottom: 10px;
+  font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ill-line); opacity: .6;
+}
+.ill.v2 { background: linear-gradient(200deg, var(--ill-b), var(--ill-a)); }
+.ill.v3 { background: radial-gradient(circle at 30% 25%, var(--ill-a), var(--ill-b) 75%); }
+.arch { border-radius: 999px 999px 14px 14px; }
+.rect { border-radius: 14px; }
+
+/* Hero */
+.hero { padding-block: clamp(40px, 6vw, 90px); }
+.hero .wrap { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(32px, 6vw, 90px); align-items: center; }
+.hero-text { display: flex; flex-direction: column; gap: 26px; min-width: 0; }
+.hero-text .lead { font-size: 1.12rem; max-width: 470px; color: var(--fg-muted); }
+.hero-cta { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+.hero-meta { display: flex; flex-wrap: wrap; gap: 8px 26px; font-size: 0.8rem; letter-spacing: 0.08em; color: var(--fg-muted); padding-top: 18px; border-top: 1px solid var(--line); }
+.photo { position: relative; justify-self: center; width: min(100%, 430px); }
+.photo .frame { aspect-ratio: 4 / 5; border: 1px solid var(--sage); padding: 10px; border-radius: 999px 999px 24px 24px; }
+.photo .frame > .inner { width: 100%; height: 100%; border-radius: 999px 999px 14px 14px; overflow: hidden; position: relative; }
+.photo .inner > .ill { height: 100%; }
+.photo .inner img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 25%; }
+.photo .hint {
+  position: absolute; left: 50%; bottom: 40px; transform: translateX(-50%); z-index: 2;
+  background: var(--bg); color: var(--fg); border: 1px solid var(--line); border-radius: 999px;
+  padding: 9px 18px; font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; cursor: pointer; white-space: nowrap; font-weight: 500;
+}
+.photo .hint:hover { border-color: var(--accent); }
+.photo.has-img .hint { display: none; }
+.photo .ill::after { display: none; }
+@media (max-width: 860px) {
+  .hero .wrap { grid-template-columns: 1fr; }
+  .photo { order: -1; width: min(86%, 340px); }
+}
+
+/* Diferenciais */
+.pillars { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+.pillar { padding: 8px 26px; display: flex; flex-direction: column; gap: 12px; border-left: 1px solid var(--line-deep); min-width: 0; }
+.pillar:first-child { border-left: 0; padding-left: 0; }
+.pillar svg { width: 34px; height: 34px; fill: none; stroke: var(--sage); stroke-width: 1.3; }
+.pillar h3 { font-size: 1.4rem; }
+.pillar p { font-size: 0.92rem; color: var(--on-deep-muted); }
+@media (max-width: 900px) {
+  .pillars { grid-template-columns: 1fr 1fr; gap: 32px 0; }
+  .pillar:nth-child(3) { border-left: 0; padding-left: 0; }
+}
+@media (max-width: 520px) {
+  .pillars { grid-template-columns: 1fr; }
+  .pillar { border-left: 0; padding-left: 0; padding-top: 22px; border-top: 1px solid var(--line-deep); }
+  .pillar:first-child { border-top: 0; padding-top: 0; }
+}
+
+/* Serviços */
+.services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.service { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 28px; display: flex; flex-direction: column; gap: 14px; min-width: 0; transition: border-color .25s, transform .25s; }
+.service:hover { border-color: var(--sage); transform: translateY(-3px); }
+.service svg { width: 38px; height: 38px; fill: none; stroke: var(--accent); stroke-width: 1.3; }
+.service p { font-size: 0.95rem; color: var(--fg-muted); flex: 1; }
+@media (max-width: 960px) { .services { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 580px) { .services { grid-template-columns: 1fr; } }
+
+/* Como funciona */
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; counter-reset: s; }
+.step { background: var(--bg); border: 1px solid var(--line); border-radius: 14px; padding: 28px 24px; display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.step::before { counter-increment: s; content: counter(s); font-family: var(--display); font-size: 3rem; line-height: 1; color: var(--sage); font-style: italic; font-weight: 300; }
+.step p { font-size: 0.93rem; color: var(--fg-muted); }
+@media (max-width: 960px) { .steps { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 520px) { .steps { grid-template-columns: 1fr; } }
+
+/* Split (sobre, filosofia, destaques) */
+.split { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: clamp(32px, 6vw, 88px); align-items: center; }
+.split.flip { grid-template-columns: 1.15fr 0.85fr; }
+.split.flip .media { order: 2; }
+.split .copy { display: flex; flex-direction: column; gap: 22px; min-width: 0; }
+.split .media { justify-self: center; width: min(100%, 420px); }
+.split .media .ill { aspect-ratio: 4 / 5; }
+.split .media.wide { width: 100%; max-width: 520px; }
+.split .media.wide .ill { aspect-ratio: 5 / 4; }
+@media (max-width: 860px) {
+  .split, .split.flip { grid-template-columns: 1fr; }
+  .split.flip .media { order: 0; }
+}
+.stats { display: grid; grid-template-columns: repeat(3, auto); justify-content: start; gap: 12px 44px; padding-top: 26px; border-top: 1px solid var(--line-deep); }
+.stat b { display: block; font-family: var(--display); font-weight: 300; font-size: 2.6rem; line-height: 1; color: var(--sage); }
+.stat span { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--on-deep-muted); }
+@media (max-width: 440px) { .stats { grid-template-columns: 1fr 1fr; } }
+.quote-line { font-family: var(--display); font-style: italic; font-size: 1.5rem; line-height: 1.35; color: var(--accent); border-left: 1px solid var(--sage); padding-left: 20px; }
+
+/* Galeria */
+.gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.gallery .ill { aspect-ratio: 1 / 1; }
+.gallery .ill:nth-child(2), .gallery .ill:nth-child(5) { aspect-ratio: 1 / 1.2; align-self: end; }
+@media (max-width: 640px) { .gallery { grid-template-columns: 1fr 1fr; } }
+
+/* Depoimentos */
+.quotes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.quote { background: var(--bg); border: 1px solid var(--line); border-radius: 14px; padding: 30px; display: flex; flex-direction: column; gap: 22px; justify-content: space-between; min-width: 0; }
+.quote blockquote { margin: 0; font-family: var(--display); font-style: italic; font-size: 1.4rem; line-height: 1.4; }
+.quote cite { font-style: normal; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--fg-muted); }
+@media (max-width: 900px) { .quotes { grid-template-columns: 1fr; } }
+
+/* FAQ */
+.faq { max-width: 780px; margin-inline: auto; border-top: 1px solid var(--line); }
+.faq details { border-bottom: 1px solid var(--line); }
+.faq summary { list-style: none; cursor: pointer; padding: 24px 0; display: flex; justify-content: space-between; gap: 20px; align-items: center; font-family: var(--display); font-size: 1.45rem; line-height: 1.25; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; font-family: var(--body); font-weight: 300; font-size: 1.6rem; color: var(--accent); transition: transform .25s; flex: none; }
+.faq details[open] summary::after { transform: rotate(45deg); }
+.faq details p { padding: 0 40px 26px 0; color: var(--fg-muted); }
+
+/* Cuidados */
+.tips { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.tip { border-top: 1px solid var(--sage); padding-top: 22px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.tip p { color: var(--fg-muted); font-size: 0.95rem; }
+@media (max-width: 800px) { .tips { grid-template-columns: 1fr; } }
+
+/* Localização */
+.place { display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(28px, 5vw, 70px); align-items: stretch; }
+.place dl { margin: 0; display: grid; gap: 20px; }
+.place dt { font-size: 0.7rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--accent); font-weight: 500; }
+.place dd { margin: 2px 0 0; font-size: 1.05rem; }
+.map { min-height: 280px; border: 1px dashed var(--sage); border-radius: 14px; display: grid; place-items: center; text-align: center; padding: 24px; color: var(--fg-muted); font-size: 0.85rem; letter-spacing: 0.14em; text-transform: uppercase; background: var(--card); }
+@media (max-width: 800px) { .place { grid-template-columns: 1fr; } }
+
+/* CTA final */
+.cta { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 28px; }
+.cta p { max-width: 520px; color: var(--on-deep-muted); }
+
+/* Rodapé */
+.foot { background: var(--bg-deep); color: var(--on-deep); border-top: 1px solid var(--line-deep); padding-block: 40px; }
+.foot .wrap { display: flex; flex-wrap: wrap; gap: 20px 40px; justify-content: space-between; align-items: center; font-size: 0.82rem; color: var(--on-deep-muted); }
+.foot .brand { color: var(--on-deep); font-size: 1.2rem; }
+.social { display: flex; gap: 14px; }
+.social a { width: 44px; height: 44px; border: 1px solid var(--line-deep); border-radius: 50%; display: grid; place-items: center; color: var(--on-deep); transition: background .25s, border-color .25s; }
+.social a:hover { background: var(--sage); border-color: var(--sage); color: #14201A; }
+.social svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.5; }
+
+/* WhatsApp flutuante */
+.float-wa {
+  position: fixed; z-index: 40;
+  right: calc(16px + env(safe-area-inset-right, 0px)); bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  width: 56px; height: 56px; border-radius: 50%; background: var(--btn-bg); color: var(--btn-fg);
+  display: grid; place-items: center; box-shadow: 0 6px 20px rgba(0,0,0,.22); transition: background .25s, color .25s;
+}
+.float-wa:hover { background: var(--btn-hover); color: var(--btn-hover-fg); }
+.float-wa svg { width: 26px; height: 26px; fill: none; stroke: currentColor; stroke-width: 1.6; }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
+html{color-scheme:light}
+body{margin:0}
+img{max-width:100%}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="leaf" viewBox="0 0 100 100"><path d="M50 92C20 72 14 36 50 8c36 28 30 64 0 84Z"/><path d="M50 92V24M50 60l-16-14M50 46l14-12"/></symbol>
+    <symbol id="drop" viewBox="0 0 100 100"><path d="M50 10C50 10 22 46 22 64a28 28 0 0 0 56 0C78 46 50 10 50 10Z"/><path d="M36 66a14 14 0 0 0 12 14"/></symbol>
+    <symbol id="flower" viewBox="0 0 100 100"><g transform="translate(50 50)"><ellipse rx="10" ry="26" cy="-26"/><ellipse rx="10" ry="26" cy="-26" transform="rotate(72)"/><ellipse rx="10" ry="26" cy="-26" transform="rotate(144)"/><ellipse rx="10" ry="26" cy="-26" transform="rotate(216)"/><ellipse rx="10" ry="26" cy="-26" transform="rotate(288)"/><circle r="6"/></g></symbol>
+    <symbol id="stones" viewBox="0 0 100 100"><ellipse cx="50" cy="76" rx="34" ry="11"/><ellipse cx="50" cy="52" rx="25" ry="9"/><ellipse cx="50" cy="31" rx="16" ry="7"/></symbol>
+    <symbol id="wave" viewBox="0 0 100 100"><path d="M8 34c14-12 28 12 42 0s28 12 42 0M8 52c14-12 28 12 42 0s28 12 42 0M8 70c14-12 28 12 42 0s28 12 42 0"/></symbol>
+    <symbol id="sun" viewBox="0 0 100 100"><circle cx="50" cy="50" r="16"/><path d="M50 10v14M50 76v14M10 50h14M76 50h14M22 22l10 10M68 68l10 10M78 22L68 32M32 68L22 78"/></symbol>
+    <symbol id="face" viewBox="0 0 100 100"><path d="M50 12c-18 0-28 14-28 32 0 22 12 40 28 44 16-4 28-22 28-44 0-18-10-32-28-32Z"/><path d="M38 46h.01M62 46h.01M40 66c6 6 14 6 20 0"/></symbol>
+    <symbol id="spark" viewBox="0 0 100 100"><path d="M50 8c4 24 18 38 42 42-24 4-38 18-42 42-4-24-18-38-42-42 24-4 38-18 42-42Z"/></symbol>
+  </defs>
+</svg>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio">Carine Carbone<small>Estética</small></a>
+    <nav class="nav" aria-label="Seções">
+      <a href="#servicos">Serviços</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#resultados">Resultados</a>
+      <a href="#duvidas">Dúvidas</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <a class="btn small" data-wa="Olá! Vim pelo site e gostaria de agendar um horário." href="#contato">Agendar</a>
+  </div>
+</header>
+
+<main id="inicio">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-text">
+        <span class="eyebrow">Estética avançada</span>
+        <h1>Cuidado que revela a sua <em>melhor versão</em></h1>
+        <p class="lead">Protocolos personalizados para pele e corpo, em um atendimento tranquilo, com tempo para ouvir o que você precisa. (texto de exemplo)</p>
+        <div class="hero-cta">
+          <a class="btn" data-wa="Olá! Vim pelo site e gostaria de agendar um horário." href="#contato">Agendar pelo WhatsApp</a>
+          <a class="link" href="#servicos">Ver serviços</a>
+        </div>
+        <div class="hero-meta">
+          <span>Atendimento com hora marcada</span>
+          <span>Avaliação inicial personalizada</span>
+        </div>
+      </div>
+      <div class="photo" id="heroPhoto">
+        <div class="frame"><div class="inner">
+          <div class="ill v3"><svg class="art" viewBox="0 0 100 100"><use href="#face"/></svg></div>
+          <img id="heroImg" alt="Carine Carbone" hidden>
+        </div></div>
+        <label class="hint" for="heroFile">Adicionar foto dela</label>
+        <input id="heroFile" type="file" accept="image/*" hidden>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIFERENCIAIS -->
+  <section class="band deep on-deep" aria-labelledby="dif">
+    <div class="wrap">
+      <div class="head"><span class="eyebrow">Por que escolher a Carine</span><h2 id="dif">Um atendimento feito <em>para você</em></h2></div>
+      <div class="pillars">
+        <div class="pillar"><svg viewBox="0 0 100 100"><use href="#spark"/></svg><h3>Avaliação individual</h3><p>Cada protocolo parte da sua pele, da sua rotina e do seu objetivo. (exemplo)</p></div>
+        <div class="pillar"><svg viewBox="0 0 100 100"><use href="#leaf"/></svg><h3>Produtos selecionados</h3><p>Ativos de qualidade, escolhidos com critério e cuidado. (exemplo)</p></div>
+        <div class="pillar"><svg viewBox="0 0 100 100"><use href="#stones"/></svg><h3>Ambiente acolhedor</h3><p>Um espaço calmo, pensado para você relaxar durante a sessão. (exemplo)</p></div>
+        <div class="pillar"><svg viewBox="0 0 100 100"><use href="#wave"/></svg><h3>Acompanhamento</h3><p>Orientação antes, durante e depois de cada tratamento. (exemplo)</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section class="band" id="servicos" aria-labelledby="serv">
+    <div class="wrap">
+      <div class="head"><span class="eyebrow">Serviços</span><h2 id="serv">Tratamentos para <em>pele e corpo</em></h2><p class="muted">Nomes e descrições de exemplo. Troque pelos serviços reais da Carine.</p></div>
+      <div class="services">
+        <article class="service"><svg viewBox="0 0 100 100"><use href="#face"/></svg><h3>Limpeza de pele</h3><p>Limpeza profunda, extração e hidratação para uma pele equilibrada e luminosa.</p><a class="link" data-wa="Olá! Tenho interesse em Limpeza de pele." href="#contato">Saber mais</a></article>
+        <article class="service"><svg viewBox="0 0 100 100"><use href="#drop"/></svg><h3>Hidratação facial</h3><p>Protocolo de nutrição e reposição de água para pele macia e viçosa.</p><a class="link" data-wa="Olá! Tenho interesse em Hidratação facial." href="#contato">Saber mais</a></article>
+        <article class="service"><svg viewBox="0 0 100 100"><use href="#sun"/></svg><h3>Peeling e renovação</h3><p>Renovação celular para uniformizar o tom e suavizar marcas.</p><a class="link" data-wa="Olá! Tenho interesse em Peeling e renovação." href="#contato">Saber mais</a></article>
+        <article class="service"><svg viewBox="0 0 100 100"><use href="#wave"/></svg><h3>Drenagem linfática</h3><p>Massagem suave que auxilia na redução do inchaço e na sensação de leveza.</p><a class="link" data-wa="Olá! Tenho interesse em Drenagem linfática." href="#contato">Saber mais</a></article>
+        <article class="service"><svg viewBox="0 0 100 100"><use href="#stones"/></svg><h3>Massagem modeladora</h3><p>Técnica manual para contorno corporal e bem-estar muscular.</p><a class="link" data-wa="Olá! Tenho interesse em Massagem modeladora." href="#contato">Saber mais</a></article>
+        <article class="service"><svg viewBox="0 0 100 100"><use href="#flower"/></svg><h3>Cuidados para o olhar</h3><p>Tratamento focado na região dos olhos, com ativos específicos para a área.</p><a class="link" data-wa="Olá! Tenho interesse em Cuidados para o olhar." href="#contato">Saber mais</a></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMO FUNCIONA -->
+  <section class="band alt" aria-labelledby="como">
+    <div class="wrap">
+      <div class="head"><span class="eyebrow">Como funciona</span><h2 id="como">Do primeiro contato ao <em>resultado</em></h2></div>
+      <div class="steps">
+        <div class="step"><h3>Contato pelo WhatsApp</h3><p>Você conta o que deseja e escolhemos o melhor horário.</p></div>
+        <div class="step"><h3>Avaliação</h3><p>Analisamos sua pele ou região de tratamento com calma.</p></div>
+        <div class="step"><h3>Plano personalizado</h3><p>Montamos o protocolo ideal para o seu objetivo e rotina.</p></div>
+        <div class="step"><h3>Acompanhamento</h3><p>Orientamos os cuidados em casa e ajustamos o plano com você.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section class="band deep on-deep" id="sobre" aria-labelledby="sob">
+    <div class="wrap">
+      <div class="split">
+        <div class="media"><div class="ill arch v3"><svg class="art" viewBox="0 0 100 100"><use href="#face"/></svg></div></div>
+        <div class="copy">
+          <span class="eyebrow">Sobre a profissional</span>
+          <h2 id="sob">Olá, eu sou a <em>Carine</em></h2>
+          <p class="muted">Esteticista dedicada a unir técnica, ciência e cuidado humano. Acredito em tratamentos que respeitam a individualidade de cada pessoa e valorizam a beleza natural. (texto de exemplo, troque pela história real)</p>
+          <p class="muted">Formação, especializações e diferenciais entram aqui. (exemplo)</p>
+          <div class="stats">
+            <div class="stat"><b>+000</b><span>Clientes</span></div>
+            <div class="stat"><b>00</b><span>Anos de prática</span></div>
+            <div class="stat"><b>00</b><span>Protocolos</span></div>
+          </div>
+          <a class="btn" style="align-self:flex-start" data-wa="Olá! Vim pelo site e gostaria de agendar um horário." href="#contato">Falar com a Carine</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FILOSOFIA -->
+  <section class="band" aria-labelledby="filo">
+    <div class="wrap">
+      <div class="split flip">
+        <div class="copy">
+          <span class="eyebrow">Nossa filosofia</span>
+          <h2 id="filo">Beleza que nasce do <em>cuidado</em></h2>
+          <p class="muted">Cuidar da pele é um ritual, não uma correria. Cada sessão é pensada para devolver equilíbrio, confiança e bem-estar, sem exageros e sem promessas milagrosas. (texto de exemplo)</p>
+          <p class="quote-line">“Resultados bonitos começam com escuta atenta.” (exemplo)</p>
+        </div>
+        <div class="media wide"><div class="ill rect v2"><svg class="art" viewBox="0 0 100 100"><use href="#leaf"/></svg></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIA -->
+  <section class="band alt" id="resultados" aria-labelledby="gal">
+    <div class="wrap">
+      <div class="head center"><span class="eyebrow">Resultados e ambiente</span><h2 id="gal">Um espaço pensado <em>nos detalhes</em></h2><p class="muted">Imagens ilustrativas. Troque pelas fotos reais do espaço e dos resultados.</p></div>
+      <div class="gallery">
+        <div class="ill rect"><svg class="art" viewBox="0 0 100 100"><use href="#leaf"/></svg></div>
+        <div class="ill rect v2"><svg class="art" viewBox="0 0 100 100"><use href="#drop"/></svg></div>
+        <div class="ill rect v3"><svg class="art" viewBox="0 0 100 100"><use href="#flower"/></svg></div>
+        <div class="ill rect v2"><svg class="art" viewBox="0 0 100 100"><use href="#stones"/></svg></div>
+        <div class="ill rect"><svg class="art" viewBox="0 0 100 100"><use href="#wave"/></svg></div>
+        <div class="ill rect v3"><svg class="art" viewBox="0 0 100 100"><use href="#sun"/></svg></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESTAQUES -->
+  <section class="band" aria-labelledby="dest">
+    <div class="wrap" style="display:flex;flex-direction:column;gap:clamp(56px,8vw,100px)">
+      <div class="head" style="margin-bottom:0"><span class="eyebrow">Tratamentos em destaque</span><h2 id="dest">Os mais <em>procurados</em></h2></div>
+      <div class="split">
+        <div class="media wide"><div class="ill rect"><svg class="art" viewBox="0 0 100 100"><use href="#drop"/></svg></div></div>
+        <div class="copy">
+          <h3 style="font-size:2.1rem">Protocolo facial completo</h3>
+          <p class="muted">Limpeza, esfoliação, máscara e finalização em uma única sessão, pensada para devolver viço e conforto à pele. (texto de exemplo)</p>
+          <a class="btn" style="align-self:flex-start" data-wa="Olá! Tenho interesse no Protocolo facial completo." href="#contato">Quero agendar</a>
+        </div>
+      </div>
+      <div class="split flip">
+        <div class="copy">
+          <h3 style="font-size:2.1rem">Ritual corporal relaxante</h3>
+          <p class="muted">Massagem e cuidados corporais para aliviar a tensão e promover leveza e bem-estar. (texto de exemplo)</p>
+          <a class="btn" style="align-self:flex-start" data-wa="Olá! Tenho interesse no Ritual corporal relaxante." href="#contato">Quero agendar</a>
+        </div>
+        <div class="media wide"><div class="ill rect v2"><svg class="art" viewBox="0 0 100 100"><use href="#stones"/></svg></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section class="band alt" aria-labelledby="dep">
+    <div class="wrap">
+      <div class="head center"><span class="eyebrow">Depoimentos</span><h2 id="dep">Quem já <em>viveu a experiência</em></h2><p class="muted">Depoimentos de exemplo. Substitua pelos reais, com autorização das clientes.</p></div>
+      <div class="quotes">
+        <figure class="quote" style="margin:0"><blockquote>Me senti acolhida desde a primeira conversa. Minha pele nunca esteve tão bem.</blockquote><cite>Cliente exemplo 1</cite></figure>
+        <figure class="quote" style="margin:0"><blockquote>Atendimento cuidadoso e um ambiente que traz paz. Recomendo de olhos fechados.</blockquote><cite>Cliente exemplo 2</cite></figure>
+        <figure class="quote" style="margin:0"><blockquote>Explicou tudo com clareza e respeitou meu tempo. Voltarei com certeza.</blockquote><cite>Cliente exemplo 3</cite></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="band" id="duvidas" aria-labelledby="faq">
+    <div class="wrap">
+      <div class="head center"><span class="eyebrow">Perguntas frequentes</span><h2 id="faq">Tire suas <em>dúvidas</em></h2></div>
+      <div class="faq">
+        <details><summary>Como funciona a primeira consulta?</summary><p>Conversamos sobre seus objetivos, avaliamos a pele ou a região e indicamos o melhor protocolo. (resposta de exemplo)</p></details>
+        <details><summary>Quanto tempo dura cada sessão?</summary><p>A duração varia conforme o tratamento. Informamos o tempo estimado ao agendar. (resposta de exemplo)</p></details>
+        <details><summary>Quantas sessões preciso fazer?</summary><p>Depende do seu objetivo e do tipo de pele. Na avaliação definimos um plano individual. (resposta de exemplo)</p></details>
+        <details><summary>Preciso me preparar antes?</summary><p>Passamos orientações simples no agendamento, como cuidados com o sol e produtos em uso. (resposta de exemplo)</p></details>
+        <details><summary>Quais formas de pagamento são aceitas?</summary><p>Informe aqui as formas de pagamento e condições. (resposta de exemplo)</p></details>
+        <details><summary>Como faço para agendar?</summary><p>Basta clicar no botão de WhatsApp e escolher o melhor horário com a Carine. (resposta de exemplo)</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CUIDADOS -->
+  <section class="band alt" aria-labelledby="cuid">
+    <div class="wrap">
+      <div class="head"><span class="eyebrow">Cuidados antes e depois</span><h2 id="cuid">Para o resultado <em>durar mais</em></h2></div>
+      <div class="tips">
+        <div class="tip"><h3>Proteção solar</h3><p>Use filtro solar todos os dias, sobretudo após procedimentos faciais. (dica de exemplo)</p></div>
+        <div class="tip"><h3>Hidratação</h3><p>Mantenha a pele hidratada e beba água ao longo do dia. (dica de exemplo)</p></div>
+        <div class="tip"><h3>Rotina em casa</h3><p>Siga a rotina indicada pela Carine e evite produtos não recomendados. (dica de exemplo)</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCALIZAÇÃO -->
+  <section class="band" id="contato" aria-labelledby="loc">
+    <div class="wrap">
+      <div class="head"><span class="eyebrow">Localização e contato</span><h2 id="loc">Venha nos <em>visitar</em></h2></div>
+      <div class="place">
+        <dl>
+          <div><dt>Endereço</dt><dd>Rua Exemplo, 000, Bairro, Cidade/UF (adicionar endereço real)</dd></div>
+          <div><dt>Horário</dt><dd>Segunda a sexta, 9h às 18h<br>Sábado, 9h às 13h (exemplo)</dd></div>
+          <div><dt>WhatsApp</dt><dd>(00) 00000-0000 (adicionar número real)</dd></div>
+          <div><a class="btn" data-wa="Olá! Vim pelo site e gostaria de agendar um horário." href="#contato">Agendar pelo WhatsApp</a></div>
+        </dl>
+        <div class="map">Espaço reservado para o mapa</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="band deep on-deep" aria-labelledby="fim">
+    <div class="wrap">
+      <div class="cta">
+        <span class="eyebrow">Seu momento</span>
+        <h2 id="fim">Reserve um horário e <em>cuide de você</em></h2>
+        <p>Fale com a Carine pelo WhatsApp e descubra o tratamento ideal para o seu momento.</p>
+        <a class="btn" data-wa="Olá! Vim pelo site e gostaria de agendar um horário." href="#contato">Agendar pelo WhatsApp</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <a class="brand" href="#inicio">Carine Carbone<small>Estética</small></a>
+    <span>© 2026 Carine Carbone. Todos os direitos reservados.</span>
+    <div class="social">
+      <a href="https://www.instagram.com/dracarinaecarbone" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6"/></svg></a>
+      <a href="https://www.facebook.com/share/19urqLTCoU/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8.5A.5.5 0 0 1 14 8Z"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<a class="float-wa" data-wa="Olá! Vim pelo site e gostaria de agendar um horário." href="#contato" aria-label="Chamar no WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M4 20l1.2-4A8 8 0 1 1 8 18.8L4 20Z"/><path d="M9 9c0 3 3 6 6 6l1.3-1.3a.6.6 0 0 0 0-.8l-1.6-1a.6.6 0 0 0-.7.1l-.5.5a4 4 0 0 1-1.7-1.7l.5-.5a.6.6 0 0 0 .1-.7l-1-1.6a.6.6 0 0 0-.8 0L9 9Z"/></svg>
+</a>
+
+<script>
+// Configuração: troque aqui o número (formato 55 + DDD + número, só dígitos).
+var CONFIG = { whatsapp: "5500000000000" };
+
+document.querySelectorAll("[data-wa]").forEach(function (a) {
+  a.href = "https://wa.me/" + CONFIG.whatsapp + "?text=" + encodeURIComponent(a.getAttribute("data-wa"));
+  a.target = "_blank";
+  a.rel = "noopener";
+});
+
+// Pré-visualização da foto no arco do topo (vale só neste navegador).
+var fileInput = document.getElementById("heroFile");
+fileInput.addEventListener("change", function () {
+  var f = fileInput.files && fileInput.files[0];
+  if (!f) return;
+  var r = new FileReader();
+  r.onload = function () {
+    var img = document.getElementById("heroImg");
+    img.src = r.result; img.hidden = false;
+    document.getElementById("heroPhoto").classList.add("has-img");
+  };
+  r.readAsDataURL(f);
+});
+</script>
+</body>
+</html>
